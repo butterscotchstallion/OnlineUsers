@@ -24,6 +24,8 @@ class User
 		$this->connection = $connection;
 	}
 	
+    // @param string $sessionID - session_id of user
+    // @param string $userAgent - user agent of browser
     public function Update($sessionID, $userAgent)
     {
         try
