@@ -33,7 +33,7 @@ class UserTest extends PHPUnit_Framework_TestCase
         $this->assertType('array', $users);
         
         // count returns false if it's 0
-        $this->assertTrue($userResultCount);
+        $this->assertNotEqual($userResultCount, 0);
 	}
 }
 
