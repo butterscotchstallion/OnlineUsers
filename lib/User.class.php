@@ -40,7 +40,7 @@ class User
 			$stmt = $this->connection->prepare($q);
 			$stmt->execute(array(':sessionID' => $sessionID,
                                  ':userAgent' => $userAgent,
-                                 ':sessionID' => $sessionID)));
+                                 ':sessionID' => $sessionID));
             return $stmt->rowCount() > 0;
 		}
 		catch(PDOException $e)
