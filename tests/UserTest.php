@@ -28,6 +28,7 @@ class UserTest extends PHPUnit_Framework_TestCase
         $users           = $u->FetchOnlineUsers();
         $userResultCount = count($users);
         $this->assertType('array', $users);
+        
         // count returns false if it's 0
         $this->assertTrue($userResultCount);
 	}
