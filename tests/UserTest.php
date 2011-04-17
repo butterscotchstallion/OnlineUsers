@@ -27,6 +27,7 @@ class UserTest extends PHPUnit_Framework_TestCase
         // Verify we made it in
         $users = $u->FetchOnlineUsers();
         var_dump($users);
+        var_dump(count($users));
         $this->assertType('array', $users);
         $this->assertGreaterThan(count($users), 0);
 	}
