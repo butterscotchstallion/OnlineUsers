@@ -28,9 +28,8 @@
      
                 // make new call
                 callNode();
-            }
-            error : function(response, code)
-            {
+            },
+            error : function(response, code) {
                 console.log(response);
             }
         });
