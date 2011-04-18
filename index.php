@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html><head>
     <title>Online Users Example</title>
 </head><body>
@@ -15,15 +16,22 @@
             require dirname(__FILE__) . '/lib/User.class.php';
             $connection = GetConnection();
             $u          = new User($connection);
+            $u->Update(session_id(), $_SERVER['HTTP_USER_AGENT']);
             $users      = $u->FetchOnlineUsers();
-            foreach( $users as $u )
+            if( $users )
+                foreach( $users as $u )
+                {
+                    ?>
+                    <tr>
+                        <td><?php echo $u->sessionID;?></td>
+                        <td><?php echo $u->lastSeen;?></td>
+                    </tr>
+                    <?php
+                }
+            }
+            else
             {
-                ?>
-                <tr>
-                    <td><?php echo $u->sessionID;?></td>
-                    <td><?php echo $u->lastSeen;?></td>
-                </tr>
-                <?php
+                ?><tr><td colspan="2">No users online in the last 5 minutes</td></tr><?php
             }
         ?>
     </tbody>
