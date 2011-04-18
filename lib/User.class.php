@@ -52,6 +52,7 @@ class User
 		}
     }
     
+    // Gets all the records from the last X minutes
 	public function FetchOnlineUsers()
 	{
 		try

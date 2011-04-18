@@ -45,7 +45,9 @@
                 {
                     ?>
                     <tr>
-                        <td><?php echo md5($u->sessionID);?></td>
+                        <td title="<?php echo htmlspecialchars($u->userAgent);?>">
+                            <?php echo md5($u->sessionID);?>
+                        </td>
                         <td><abbr class="timeago" title="<?php echo $u->user_last_seen;?>"><?php echo $u->lastSeen;?></abbr></td>
                     </tr>
                     <?php
