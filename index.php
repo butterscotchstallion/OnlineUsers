@@ -1,6 +1,21 @@
 <?php session_start(); ?>
 <html><head>
     <title>Online Users Example</title>
+    <style type="text/css">
+        body {
+            font-family: verdana, arial, sans-serif;
+            font-size: 76%;
+            color: #222;
+            background-color: #fff;
+        }
+        
+        #online {
+            width: 50%;
+        }
+            #online td {
+                padding: 1em;
+            }
+    </style>
 </head><body>
 
 <table id="online">
