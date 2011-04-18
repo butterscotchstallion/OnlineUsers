@@ -61,6 +61,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="/sandbox/OnlineUsers/assets/js/jquery.timeago.js"></script>
 <!--<script src="/sandbox/OnlineUsers/lib/socket.io/socket.io.js"></script>-->
 
 <script>
