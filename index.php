@@ -11,8 +11,8 @@
     </thead>
     <tbody>
         <?php
-            require 'lib/config.php';
-            require 'lib/User.class.php';
+            require './lib/config.php';
+            require './lib/User.class.php';
             $connection = GetConnection();
             $u          = new User($connection);
             $users      = $u->FetchOnlineUsers();
