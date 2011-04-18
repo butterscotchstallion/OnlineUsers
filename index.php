@@ -2,12 +2,37 @@
     <title>Online Users Example</title>
 </head><body>
 
-<ul id="outputUL">
-    
-</ul>
+<table id="online">
+    <thead>
+        <tr>
+            <th>Identifier</th>
+            <th>Last seen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+            require 'lib/config.php';
+            require 'lib/User.class.php';
+            $connection = GetConnection();
+            $u          = new User($connection);
+            $users      = $u->FetchOnlineUsers();
+            foreach( $users as $u )
+            {
+                ?>
+                <tr>
+                    <td><?php echo $u->sessionID;?></td>
+                    <td><?php echo $u->lastSeen;?></td>
+                </tr>
+                <?php
+            }
+        ?>
+    </tbody>
+</table>
 
+<!--
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script src="/sandbox/OnlineUsers/lib/socket.io/socket.io.js"></script>
+
 <script>
     function getResponse() {
         $.ajax({
@@ -36,8 +61,9 @@
     }
         
     $(document).ready(function() {
-        getResponse();
+        //getResponse();
     });
 </script>
+-->
 
 </body></html>
