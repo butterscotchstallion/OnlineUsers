@@ -58,7 +58,7 @@ class User
 		{
 			$q = "SELECT u.user_id AS userID,
                          u.user_session_id AS sessionID,
-                         u.user_last_seen AS lastSeen,
+                         DATE_FORMAT(u.user_last_seen, '%r') AS lastSeen,
                          u.user_agent AS userAgent
                   FROM user u
                   WHERE u.user_last_seen > DATE_SUB(NOW(), INTERVAL :seenThreshold MINUTE) AND NOW()";
