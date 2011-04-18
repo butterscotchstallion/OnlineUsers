@@ -12,6 +12,11 @@
         #online {
             width: 50%;
         }
+            #online th {
+                text-align: left;
+                font-family: georgia, arial, sans-serif;
+            }
+            
             #online td {
                 padding: 1em;
             }
