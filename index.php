@@ -45,7 +45,7 @@
                 {
                     ?>
                     <tr>
-                        <td><?php echo $u->sessionID;?></td>
+                        <td><?php echo md5($u->sessionID);?></td>
                         <td><?php echo $u->lastSeen;?></td>
                     </tr>
                     <?php
