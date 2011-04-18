@@ -15,6 +15,7 @@
             #online th {
                 text-align: left;
                 font-family: georgia, arial, sans-serif;
+                padding-left: 1em;
             }
             
             #online td {
