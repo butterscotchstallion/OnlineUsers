@@ -9,7 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script src="/sandbox/OnlineUsers/lib/socket.io/socket.io.js"></script>
 <script>
-    function callNode() {
+    function getResponse() {
         $.ajax({
             cache : false,
             // setup the server address
@@ -19,7 +19,7 @@
      
                 if ( 'OK' == response ) 
                 {
-                    callNode();
+                    getResponse();
                     return false;
                 }
      
@@ -27,7 +27,7 @@
                 $('#outputUL').prepend('<li>' + response + '</li>');
      
                 // make new call
-                callNode();
+                getResponse();
             },
             error : function(response, code) {
                 console.log(response);
@@ -36,7 +36,7 @@
     }
         
     $(document).ready(function() {
-        callNode();
+        getResponse();
     });
 </script>
 
