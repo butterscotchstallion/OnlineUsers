@@ -19,6 +19,7 @@
             $u->Update(session_id(), $_SERVER['HTTP_USER_AGENT']);
             $users      = $u->FetchOnlineUsers();
             if( $users )
+            {
                 foreach( $users as $u )
                 {
                     ?>
