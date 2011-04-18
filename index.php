@@ -46,7 +46,7 @@
                     ?>
                     <tr>
                         <td><?php echo md5($u->sessionID);?></td>
-                        <td><?php echo $u->lastSeen;?></td>
+                        <td><abbr class="timeago" title="<?php echo $u->user_last_seen;?>"><?php echo $u->lastSeen;?></abbr></td>
                     </tr>
                     <?php
                 }
@@ -59,11 +59,12 @@
     </tbody>
 </table>
 
-<!--
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-<script src="/sandbox/OnlineUsers/lib/socket.io/socket.io.js"></script>
+<!--<script src="/sandbox/OnlineUsers/lib/socket.io/socket.io.js"></script>-->
 
 <script>
+    <!--
     function getResponse() {
         $.ajax({
             cache : false,
@@ -89,11 +90,12 @@
             }
         });
     }
-        
+    -->
+    
     $(document).ready(function() {
         //getResponse();
+        $('.timeago').timeago();
     });
 </script>
--->
 
 </body></html>
